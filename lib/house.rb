@@ -20,6 +20,6 @@ class House
   end
 
   def price_per_sf
-    self.price.to_f / self.area.to_f
+    (self.price.to_f / self.area.to_f).round(2)
   end
 end

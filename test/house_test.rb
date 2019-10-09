@@ -24,5 +24,14 @@ class HouseTest < MiniTest::Test
 
     assert_equal [@room1, @room2, @room3, @room4], @house.rooms
   end
+
+  def test_find_rooms_from_cat
+    @house.add_room(@room1)
+    @house.add_room(@room2)
+    @house.add_room(@room3)
+    @house.add_room(@room4)
+
+    assert_equal [@room1, @room2], @house.rooms_from_category('bedroom')
+  end
 end
 

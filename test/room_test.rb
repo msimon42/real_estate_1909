@@ -2,7 +2,7 @@
 require 'minitest/autorun'
 require_relative '../lib/room'
 
-class RoomTest
+class RoomTest < MiniTest::Test
   def setup
     @room = Room.new(:bedroom, 10, 13)
   end

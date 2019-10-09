@@ -18,4 +18,8 @@ class House
   def area
     area = @rooms.collect { |room| room.area }.reduce(0, :+)
   end
+
+  def price_per_sf
+    self.price.to_f / self.area.to_f
+  end
 end

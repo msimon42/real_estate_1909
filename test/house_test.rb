@@ -60,5 +60,16 @@ class HouseTest < MiniTest::Test
 
     assert_equal [@room1, @room4, @room2, @room3], @house.sort_by_area
   end
+
+  def test_rooms_by_cat
+    @house.add_room(@room1)
+    @house.add_room(@room2)
+    @house.add_room(@room3)
+    @house.add_room(@room4)
+
+    hash = {:bedroom=>[@room1, @room2], :living_room => [@room3], :kitchen => [@room4]}
+    assert_equal hash, @house.rooms_by_category
+  end
 end
+
 

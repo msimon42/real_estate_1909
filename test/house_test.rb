@@ -5,7 +5,7 @@ require_relative '../lib/room'
 class HouseTest < MiniTest::Test
 
   def setup
-    @house = House.new('400000', '123 Sugar Lane')
+    @house = House.new('400000', '123 Sugar Lane') #130, 240, 500, 221
     @room1 = Room.new(:bedroom, 10, 13)
     @room2 = Room.new(:bedroom, 15, 16)
     @room3 = Room.new(:living_room, 20, 25)
@@ -32,6 +32,15 @@ class HouseTest < MiniTest::Test
     @house.add_room(@room4)
 
     assert_equal [@room1, @room2], @house.rooms_from_category('bedroom')
+  end
+
+  def test_area
+    @house.add_room(@room1)
+    @house.add_room(@room2)
+    @house.add_room(@room3)
+    @house.add_room(@room4)
+
+    assert_equal 1091, @house.area
   end
 end
 

@@ -10,4 +10,8 @@ class House
   def add_room(room)
     @rooms << room
   end
+
+  def rooms_from_category(category)
+    rooms_cat = @rooms.find_all {|room| room.category == category.to_sym}
+  end
 end

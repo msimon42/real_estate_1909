@@ -22,4 +22,12 @@ class House
   def price_per_sf
     (self.price.to_f / self.area.to_f).round(2)
   end
+
+  def sort_by_area
+    @rooms.sort_by {|room| room.area}
+  end
+
+  def rooms_by_category
+
+  end
 end

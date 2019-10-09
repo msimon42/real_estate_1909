@@ -14,4 +14,8 @@ class House
   def rooms_from_category(category)
     rooms_cat = @rooms.find_all {|room| room.category == category.to_sym}
   end
+
+  def area
+    area = @rooms.collect { |room| room.area }.reduce(0, :+)
+  end
 end
